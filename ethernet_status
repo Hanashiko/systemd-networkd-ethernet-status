@@ -1,0 +1,11 @@
+#!/bin/bash
+
+IFACE="enp4s0"
+
+CARRIER=$(cat /sys/class/net/$IFACE/carrier)
+
+if [ "$CARRIER" -eq 1 ]; then
+    echo "🔌 Ethernet ($IFACE) підключено!"
+else
+    echo "❌ Ethernet ($IFACE) не підключено."
+fi
